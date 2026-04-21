@@ -1,0 +1,6 @@
+-- 该文件为占位文件，真正内容由 mysqldump 生成：
+--
+--   mysqldump -u root -p --databases scs --routines --triggers --events > backup/scs_backup.sql
+--
+-- 执行上面命令后，本文件将被覆盖为包含完整 CREATE DATABASE、CREATE TABLE、
+-- INSERT、CREATE TRIGGER 等 SQL 语句的备份脚本。
