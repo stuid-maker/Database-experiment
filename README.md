@@ -17,7 +17,6 @@
 │   ├── 07_privileges.sql        # 用户、角色、授权/回收（含 WITH GRANT OPTION）
 │   ├── 08_constraints.sql       # 完整性约束的建表后增/删/改及违反验证
 │   ├── 09_triggers.sql          # 触发器：定义、激活、删除
-│   └── 10_backup_restore.md     # mysqldump 备份与恢复说明
 ├── backup/
 │   └── scs_backup.sql           # 由 mysqldump 生成的备份文件（初始为占位）
 └── docs/
@@ -84,12 +83,6 @@ cmd /c "mysql -u root -p < backup\scs_backup.sql"
 2. 填写 [docs/实验报告.md](docs/实验报告.md) 中的姓名、学号、截图、感想；
 3. 把根目录重命名为 `课程实验+你的学号+你的姓名`；
 4. 使用 7-Zip 或 WinRAR 将其打包为同名的 `.zip` 或 `.rar` 文件提交。
-
-例如：
-
-```
-课程实验+20230001+张三.zip
-```
 
 ## 五、环境依赖
 
