@@ -89,6 +89,7 @@ SHOW GRANTS FOR 'u_teacher'@'localhost' USING 'r_grade_writer';
    GRANT SELECT ON scs.Teacher TO 'u_student'@'localhost';
 */
 
+
 -- -------------------------------------------------------------
 -- E. 收回权限
 -- -------------------------------------------------------------
@@ -115,3 +116,4 @@ FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'u_student'@'localhost';
 SHOW GRANTS FOR 'u_teacher'@'localhost';
 SHOW GRANTS FOR 'u_admin'@'localhost';
+

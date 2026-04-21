@@ -45,27 +45,27 @@ START TRANSACTION;
 
 -- B1. 违反主键 / 实体完整性：插入重复 Sno
 -- 预期报错：Duplicate entry '201515001' for key 'Student.PRIMARY'
--- INSERT INTO Student (Sno,Sname,Sdept) VALUES ('201515001','Dup Stu','CS');
+INSERT INTO Student (Sno,Sname,Sdept) VALUES ('201515001','Dup Stu','CS');
 
 -- B2. 违反 NOT NULL：不提供 Sdept
 -- 预期报错：Field 'Sdept' doesn't have a default value
--- INSERT INTO Student (Sno,Sname) VALUES ('201515090','Si Li');
+INSERT INTO Student (Sno,Sname) VALUES ('201515090','Si Li');
 
 -- B3. 违反 ENUM 取值：插入非法性别（Ssex 列为 ENUM，无 'X'）
 -- 预期报错（严格模式）：Data truncated for column 'Ssex' 或 Invalid value for enum
--- INSERT INTO Student (Sno,Sname,Ssex,Sage,Sdept) VALUES ('201515091','Wu Zhang','X',20,'CS');
+INSERT INTO Student (Sno,Sname,Ssex,Sage,Sdept) VALUES ('201515091','Wu Zhang','X',20,'CS');
 
 -- B4. 违反 UNIQUE：插入与已有教师同名的教师
 -- 预期报错：Duplicate entry 'Wang Wei' for key 'Teacher.uk_teacher_name'
--- INSERT INTO Teacher (Tno,Tname,Tdept) VALUES ('T9999','Wang Wei','CS');
+INSERT INTO Teacher (Tno,Tname,Tdept) VALUES ('T9999','Wang Wei','CS');
 
 -- B5. 违反参照完整性：SC 中插入不存在的 Sno
 -- 预期报错：Cannot add or update a child row: foreign key constraint fails
--- INSERT INTO SC (Sno,Cno,Grade) VALUES ('999999999','C001',80);
+INSERT INTO SC (Sno,Cno,Grade) VALUES ('999999999','C001',80);
 
 -- B6. 违反参照完整性：删除 Course 中仍被 SC 引用的课程
 -- 因 SC.fk_sc_course 未指定 CASCADE，删除将被拒绝
--- DELETE FROM Course WHERE Cno='C001';
+DELETE FROM Course WHERE Cno='C001';
 
 -- ★提示：请同学按需取消注释，在客户端执行以记录错误输出和截图
 
