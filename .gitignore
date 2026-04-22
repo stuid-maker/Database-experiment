@@ -1,0 +1,4 @@
+# Local archives (do not push to remote)
+*.rar
+*.zip
+*.7z
